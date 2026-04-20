@@ -1,0 +1,562 @@
+2026-04-13 10:12:08,401 | INFO | Tracker started
+2026-04-13 10:12:09,253 | ERROR | Tracker failed: HTTPSConnectionPool(host='example.com', port=443): Max retries exceeded with url: /jobs (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\util\ssl_.py", line 483, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\util\ssl_.py", line 527, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1319, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='example.com', port=443): Max retries exceeded with url: /jobs (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 55, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 28, in run_tracker
+    html = fetch_html(source_url)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\scraper.py", line 12, in fetch_html
+    response = requests.get(url, headers=HEADERS, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\adapters.py", line 676, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='example.com', port=443): Max retries exceeded with url: /jobs (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+2026-04-13 10:31:31,769 | INFO | Tracker started
+2026-04-13 10:31:32,907 | ERROR | Tracker failed: HTTPSConnectionPool(host='example.com', port=443): Max retries exceeded with url: /jobs (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\util\ssl_.py", line 483, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\util\ssl_.py", line 527, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1319, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+urllib3.exceptions.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='example.com', port=443): Max retries exceeded with url: /jobs (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 55, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 28, in run_tracker
+    html = fetch_html(source_url)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\scraper.py", line 12, in fetch_html
+    response = requests.get(url, headers=HEADERS, timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\adapters.py", line 676, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='example.com', port=443): Max retries exceeded with url: /jobs (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+2026-04-13 10:37:21,470 | INFO | Tracker started
+2026-04-13 10:37:22,977 | INFO | Parsed 100 jobs
+2026-04-13 10:37:23,874 | ERROR | Tracker failed: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-50dd54dd235sm87263481cf.14 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 55, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 49, in run_tracker
+    send_summary_email(subject, body)
+  File "C:\Users\HP\Desktop\job_tracker\app\emailer.py", line 31, in send_summary_email
+    server.login(SMTP_USER, SMTP_PASS)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-50dd54dd235sm87263481cf.14 - gsmtp')
+2026-04-13 10:52:02,886 | INFO | Tracker started
+2026-04-13 10:52:04,270 | INFO | Parsed 100 jobs
+2026-04-13 10:52:04,893 | ERROR | Tracker failed: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor af79cd13be357-8de6553c460sm871444985a.43 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 55, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 49, in run_tracker
+    send_summary_email(subject, body)
+  File "C:\Users\HP\Desktop\job_tracker\app\emailer.py", line 31, in send_summary_email
+    server.login(SMTP_USER, SMTP_PASS)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor af79cd13be357-8de6553c460sm871444985a.43 - gsmtp')
+2026-04-13 11:05:11,532 | INFO | Tracker started
+2026-04-13 11:05:12,784 | INFO | Parsed 100 jobs
+2026-04-13 11:05:14,440 | ERROR | Tracker failed: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor af79cd13be357-8de94216e90sm719145185a.1 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 55, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 49, in run_tracker
+    send_summary_email(subject, body)
+  File "C:\Users\HP\Desktop\job_tracker\app\emailer.py", line 31, in send_summary_email
+    server.login(SMTP_USER, SMTP_PASS)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor af79cd13be357-8de94216e90sm719145185a.1 - gsmtp')
+2026-04-13 11:07:26,378 | INFO | Tracker started
+2026-04-13 11:07:27,501 | INFO | Parsed 100 jobs
+2026-04-13 11:07:28,222 | ERROR | Tracker failed: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 6a1803df08f44-8acb925d457sm6646746d6.45 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 57, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 51, in run_tracker
+    send_summary_email(subject, body)
+  File "C:\Users\HP\Desktop\job_tracker\app\emailer.py", line 31, in send_summary_email
+    server.login(SMTP_USER, SMTP_PASS)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 6a1803df08f44-8acb925d457sm6646746d6.45 - gsmtp')
+2026-04-13 11:09:47,012 | INFO | Tracker started
+2026-04-13 11:09:47,990 | INFO | Parsed 100 jobs
+2026-04-13 11:09:47,992 | INFO | Tracker completed successfully
+2026-04-13 11:10:29,785 | INFO | Tracker started
+2026-04-13 11:10:30,724 | INFO | Parsed 100 jobs
+2026-04-13 11:10:30,724 | INFO | Tracker completed successfully
+2026-04-13 11:46:07,190 | INFO | Tracker started
+2026-04-13 11:46:11,696 | INFO | Parsed 100 jobs
+2026-04-13 11:46:11,696 | INFO | Tracker completed successfully
+2026-04-13 11:47:27,607 | INFO | Tracker started
+2026-04-13 11:47:28,891 | INFO | Parsed 100 jobs
+2026-04-13 11:47:30,190 | INFO | Tracker completed successfully
+2026-04-13 11:47:37,845 | INFO | Tracker started
+2026-04-13 11:47:38,799 | INFO | Parsed 100 jobs
+2026-04-13 11:47:39,957 | INFO | Tracker completed successfully
+2026-04-13 11:52:37,146 | INFO | Tracker started
+2026-04-13 11:52:39,983 | INFO | Parsed 100 jobs
+2026-04-13 11:52:41,665 | INFO | Tracker completed successfully
+2026-04-13 12:03:02,676 | INFO | Tracker started
+2026-04-13 12:03:03,842 | INFO | Parsed 100 jobs
+2026-04-13 12:03:07,059 | INFO | Tracker completed successfully
+2026-04-13 12:04:12,620 | INFO | Tracker started
+2026-04-13 12:04:13,641 | INFO | Parsed 100 jobs
+2026-04-13 12:04:15,094 | INFO | Tracker completed successfully
+2026-04-14 10:40:48,807 | INFO | Tracker started
+2026-04-14 10:40:53,352 | INFO | Parsed 100 jobs
+2026-04-14 10:40:57,466 | INFO | Tracker completed successfully
+2026-04-14 16:02:15,840 | INFO | Job tracker started
+2026-04-14 16:02:17,294 | INFO | Collected 496 jobs from Greenhouse source Stripe
+2026-04-14 16:02:18,385 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-14 16:02:18,385 | INFO | Total collected jobs: 554
+2026-04-14 16:02:18,389 | ERROR | Job tracker failed: table jobs has no column named source_company
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 58, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 40, in run_tracker
+    is_new = upsert_job(job)
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\storage.py", line 83, in upsert_job
+    conn.execute("""
+sqlite3.OperationalError: table jobs has no column named source_company
+2026-04-14 16:04:14,927 | INFO | Job tracker started
+2026-04-14 16:04:16,387 | INFO | Collected 496 jobs from Greenhouse source Stripe
+2026-04-14 16:04:17,746 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-14 16:04:17,746 | INFO | Total collected jobs: 554
+2026-04-14 16:04:17,754 | ERROR | Job tracker failed: table jobs has no column named source_company
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 58, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 40, in run_tracker
+    is_new = upsert_job(job)
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\storage.py", line 83, in upsert_job
+    conn.execute("""
+sqlite3.OperationalError: table jobs has no column named source_company
+2026-04-14 16:07:37,721 | INFO | Job tracker started
+2026-04-14 16:07:39,093 | INFO | Collected 496 jobs from Greenhouse source Stripe
+2026-04-14 16:07:40,098 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-14 16:07:40,098 | INFO | Total collected jobs: 554
+2026-04-14 16:07:40,104 | ERROR | Job tracker failed: table jobs has no column named source_company
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 58, in <module>
+    run_tracker()
+  File "C:\Users\HP\Desktop\job_tracker\app\main.py", line 40, in run_tracker
+    is_new = upsert_job(job)
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\storage.py", line 83, in upsert_job
+    conn.execute("""
+sqlite3.OperationalError: table jobs has no column named source_company
+2026-04-14 16:08:08,325 | INFO | Job tracker started
+2026-04-14 16:08:09,960 | INFO | Collected 496 jobs from Greenhouse source Stripe
+2026-04-14 16:08:10,892 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-14 16:08:10,892 | INFO | Total collected jobs: 554
+2026-04-14 16:08:12,608 | INFO | New jobs inserted: 21
+2026-04-14 16:08:12,609 | INFO | CSV exported: data/jobs_20260414_160811.csv
+2026-04-14 16:08:12,609 | INFO | Job tracker finished successfully
+2026-04-14 16:10:36,268 | INFO | Job tracker started
+2026-04-14 16:10:39,639 | INFO | Collected 497 jobs from Greenhouse source Stripe
+2026-04-14 16:10:40,892 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-14 16:10:40,892 | INFO | Total collected jobs: 555
+2026-04-14 16:10:42,516 | INFO | New jobs inserted: 0
+2026-04-14 16:10:42,516 | INFO | CSV exported: data/jobs_20260414_161041.csv
+2026-04-14 16:10:42,517 | INFO | Job tracker finished successfully
+2026-04-14 16:14:00,112 | INFO | Job tracker started
+2026-04-14 16:14:01,642 | INFO | Collected 497 jobs from Greenhouse source Stripe
+2026-04-14 16:14:02,489 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-14 16:14:02,490 | INFO | Total collected jobs: 555
+2026-04-14 16:14:02,836 | INFO | New jobs inserted: 0
+2026-04-14 16:14:02,836 | INFO | CSV exported: data/jobs_20260414_161402.csv
+2026-04-14 16:14:02,836 | INFO | Job tracker finished successfully
+2026-04-14 16:19:07,696 | INFO | Job tracker started
+2026-04-14 16:19:09,330 | INFO | Collected 497 jobs from Greenhouse source Stripe
+2026-04-14 16:19:10,278 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-14 16:19:10,279 | INFO | Total collected jobs: 555
+2026-04-14 16:19:11,778 | INFO | New jobs inserted: 0
+2026-04-14 16:19:11,778 | INFO | CSV exported: data/jobs_20260414_161910.csv
+2026-04-14 16:19:11,779 | INFO | Job tracker finished successfully
+2026-04-17 11:19:00,237 | INFO | Job tracker started
+2026-04-17 11:19:01,957 | INFO | Collected 497 jobs from Greenhouse source Stripe
+2026-04-17 11:19:03,002 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-17 11:19:03,003 | INFO | Total collected jobs: 555
+2026-04-17 11:19:07,052 | INFO | New jobs inserted: 2
+2026-04-17 11:19:07,052 | INFO | CSV exported: data/jobs_20260417_111905.csv
+2026-04-17 11:19:07,053 | INFO | Job tracker finished successfully
+2026-04-17 11:22:37,065 | INFO | Job tracker started
+2026-04-17 11:22:38,439 | INFO | Collected 497 jobs from Greenhouse source Stripe
+2026-04-17 11:22:39,513 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-17 11:22:39,513 | INFO | Total collected jobs: 555
+2026-04-17 11:22:42,950 | INFO | New jobs inserted: 0
+2026-04-17 11:22:42,950 | INFO | CSV exported: data/jobs_20260417_112241.csv
+2026-04-17 11:22:42,951 | INFO | Job tracker finished successfully
+2026-04-18 11:10:44,800 | INFO | Job tracker started
+2026-04-18 11:10:46,692 | INFO | Collected 498 jobs from Greenhouse source Stripe
+2026-04-18 11:10:47,567 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-18 11:10:47,567 | INFO | Total collected jobs: 556
+2026-04-18 11:10:51,069 | INFO | New jobs inserted: 0
+2026-04-18 11:10:51,070 | INFO | CSV exported: data/jobs_20260418_111049.csv
+2026-04-18 11:10:51,070 | INFO | Job tracker finished successfully
+2026-04-18 12:19:12,156 | INFO | Job tracker started
+2026-04-18 12:19:13,733 | INFO | Collected 498 jobs from Greenhouse source Stripe
+2026-04-18 12:19:14,686 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-18 12:19:15,767 | ERROR | Failed Greenhouse source Shopify: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 25, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+2026-04-18 12:19:17,253 | INFO | Collected 82 jobs from Greenhouse source Discord
+2026-04-18 12:19:19,327 | ERROR | Failed Greenhouse source Notion: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/notion/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 25, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/notion/jobs
+2026-04-18 12:19:20,473 | INFO | Collected 134 jobs from Greenhouse source Coinbase
+2026-04-18 12:19:21,927 | INFO | Collected 146 jobs from Greenhouse source Robinhood
+2026-04-18 12:19:21,927 | INFO | Total collected jobs: 918
+2026-04-18 12:19:25,759 | INFO | New jobs inserted: 9
+2026-04-18 12:19:25,760 | INFO | CSV exported: data/jobs_20260418_121924.csv
+2026-04-18 12:19:25,761 | INFO | Job tracker finished successfully
+2026-04-18 12:36:32,081 | INFO | Job tracker started
+2026-04-18 12:36:34,012 | INFO | Collected 498 jobs from Greenhouse source Stripe
+2026-04-18 12:36:34,817 | INFO | Collected 58 jobs from Greenhouse source Airtable
+2026-04-18 12:36:35,694 | ERROR | Failed Greenhouse source Shopify: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 28, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+2026-04-18 12:36:36,551 | INFO | Collected 82 jobs from Greenhouse source Discord
+2026-04-18 12:36:37,801 | ERROR | Failed Greenhouse source Notion: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/notion/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 28, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/notion/jobs
+2026-04-18 12:36:39,376 | INFO | Collected 134 jobs from Greenhouse source Coinbase
+2026-04-18 12:36:40,491 | INFO | Collected 146 jobs from Greenhouse source Robinhood
+2026-04-18 12:36:41,441 | ERROR | Failed Greenhouse source Plaid: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/plaid/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 28, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/plaid/jobs
+2026-04-18 12:36:42,397 | INFO | Collected 154 jobs from Greenhouse source Figma
+2026-04-18 12:36:43,301 | ERROR | Failed Greenhouse source OpenAI: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/openai/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 28, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/openai/jobs
+2026-04-18 12:36:43,308 | INFO | Total collected jobs: 1072
+2026-04-18 12:36:50,013 | INFO | New jobs inserted: 3
+2026-04-18 12:36:50,013 | INFO | CSV exported: data/jobs_20260418_123648.csv
+2026-04-18 12:36:50,014 | INFO | Job tracker finished successfully
+2026-04-18 12:53:32,910 | INFO | Job tracker started
+2026-04-18 12:53:34,271 | INFO | Collected 498 jobs from Stripe
+2026-04-18 12:53:35,185 | INFO | Collected 58 jobs from Airtable
+2026-04-18 12:53:36,079 | ERROR | Error collecting jobs from Shopify: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 22, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+2026-04-18 12:53:36,900 | INFO | Collected 82 jobs from Discord
+2026-04-18 12:53:38,060 | ERROR | Error collecting jobs from Notion: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/notion/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 22, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/notion/jobs
+2026-04-18 12:53:39,286 | INFO | Collected 134 jobs from Coinbase
+2026-04-18 12:53:40,102 | INFO | Collected 146 jobs from Robinhood
+2026-04-18 12:53:40,103 | INFO | Total collected jobs: 918
+2026-04-18 12:53:44,303 | INFO | New jobs inserted: 0
+2026-04-18 12:53:44,303 | INFO | CSV exported: data/jobs_20260418_125342.csv
+2026-04-18 12:53:44,304 | INFO | Job tracker finished successfully
+2026-04-18 12:58:31,217 | INFO | Job tracker started
+2026-04-18 12:58:32,587 | INFO | Collected 498 jobs from Stripe
+2026-04-18 12:58:33,663 | INFO | Collected 58 jobs from Airtable
+2026-04-18 12:58:34,497 | ERROR | Error collecting jobs from Shopify: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 22, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/shopify/jobs
+2026-04-18 12:58:35,370 | INFO | Collected 82 jobs from Discord
+2026-04-18 12:58:36,516 | ERROR | Error collecting jobs from Notion: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/notion/jobs
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\job_tracker\app\services\collector.py", line 22, in collect_all_jobs
+    jobs = fetch_greenhouse_jobs(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Desktop\job_tracker\app\sources\greenhouse.py", line 12, in fetch_greenhouse_jobs
+    response.raise_for_status()
+  File "C:\Users\HP\Desktop\job_tracker\venv\Lib\site-packages\requests\models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/notion/jobs
+2026-04-18 12:58:37,488 | INFO | Collected 134 jobs from Coinbase
+2026-04-18 12:58:39,588 | INFO | Collected 146 jobs from Robinhood
+2026-04-18 12:58:39,589 | INFO | Total collected jobs: 918
+2026-04-18 12:58:52,736 | INFO | New jobs inserted: 0
+2026-04-18 12:58:52,736 | INFO | CSV exported: data/jobs_20260418_125851.csv
+2026-04-18 12:58:52,736 | INFO | Job tracker finished successfully
+2026-04-18 12:59:03,584 | INFO | Job tracker started
+2026-04-18 12:59:04,684 | INFO | Collected 498 jobs from Stripe
+2026-04-18 12:59:05,578 | INFO | Collected 58 jobs from Airtable
+2026-04-18 12:59:06,459 | INFO | Collected 82 jobs from Discord
+2026-04-18 12:59:07,323 | INFO | Collected 134 jobs from Coinbase
+2026-04-18 12:59:08,214 | INFO | Collected 146 jobs from Robinhood
+2026-04-18 12:59:08,214 | INFO | Total collected jobs: 918
+2026-04-18 12:59:09,952 | INFO | New jobs inserted: 0
+2026-04-18 12:59:09,952 | INFO | CSV exported: data/jobs_20260418_125908.csv
+2026-04-18 12:59:09,953 | INFO | Job tracker finished successfully
+2026-04-18 13:19:04,055 | INFO | Job tracker started
+2026-04-18 13:19:05,307 | INFO | Collected 498 jobs from Stripe
+2026-04-18 13:19:06,168 | INFO | Collected 58 jobs from Airtable
+2026-04-18 13:19:07,059 | INFO | Collected 82 jobs from Discord
+2026-04-18 13:19:07,989 | INFO | Collected 134 jobs from Coinbase
+2026-04-18 13:19:09,000 | INFO | Collected 146 jobs from Robinhood
+2026-04-18 13:19:09,000 | INFO | Total collected jobs: 918
+2026-04-18 13:19:13,207 | INFO | New jobs inserted: 0
+2026-04-18 13:19:13,207 | INFO | CSV exported: data/jobs_20260418_131911.csv
+2026-04-18 13:19:13,208 | INFO | Job tracker finished successfully
+2026-04-18 13:30:36,392 | INFO | Job tracker started
+2026-04-18 13:30:37,653 | INFO | Collected 498 jobs from Stripe
+2026-04-18 13:30:38,561 | INFO | Collected 58 jobs from Airtable
+2026-04-18 13:30:39,454 | INFO | Collected 82 jobs from Discord
+2026-04-18 13:30:40,399 | INFO | Collected 134 jobs from Coinbase
+2026-04-18 13:30:41,269 | INFO | Collected 146 jobs from Robinhood
+2026-04-18 13:30:41,270 | INFO | Total collected jobs: 918
+2026-04-18 13:30:42,781 | INFO | New jobs inserted: 0
+2026-04-18 13:30:42,782 | INFO | CSV exported: data/jobs_20260418_133041.csv
+2026-04-18 13:30:42,782 | INFO | Job tracker finished successfully
+2026-04-18 13:32:23,588 | INFO | Job tracker started
+2026-04-18 13:32:24,553 | INFO | Collected 498 jobs from Stripe
+2026-04-18 13:32:25,401 | INFO | Collected 58 jobs from Airtable
+2026-04-18 13:32:26,272 | INFO | Collected 82 jobs from Discord
+2026-04-18 13:32:27,203 | INFO | Collected 134 jobs from Coinbase
+2026-04-18 13:32:28,226 | INFO | Collected 146 jobs from Robinhood
+2026-04-18 13:32:28,226 | INFO | Total collected jobs: 918
+2026-04-18 13:32:29,357 | INFO | New jobs inserted: 0
+2026-04-18 13:32:29,412 | INFO | CSV exported: data/jobs_20260418_133228.csv
+2026-04-18 13:32:29,412 | INFO | Job tracker finished successfully
+2026-04-18 13:37:39,171 | INFO | Job tracker started
+2026-04-18 13:37:40,606 | INFO | Collected 498 jobs from Stripe
+2026-04-18 13:37:41,477 | INFO | Collected 58 jobs from Airtable
+2026-04-18 13:37:42,349 | INFO | Collected 82 jobs from Discord
+2026-04-18 13:37:43,196 | INFO | Collected 134 jobs from Coinbase
+2026-04-18 13:37:44,045 | INFO | Collected 146 jobs from Robinhood
+2026-04-18 13:37:44,046 | INFO | Total collected jobs: 918
+2026-04-18 13:37:45,047 | INFO | New jobs inserted: 0
+2026-04-18 13:37:45,047 | INFO | CSV exported: data/jobs_20260418_133744.csv
+2026-04-18 13:37:45,048 | INFO | Job tracker finished successfully
+2026-04-18 13:38:52,903 | INFO | Job tracker started
+2026-04-18 13:38:53,840 | INFO | Collected 498 jobs from Stripe
+2026-04-18 13:38:54,745 | INFO | Collected 58 jobs from Airtable
+2026-04-18 13:38:55,566 | INFO | Collected 82 jobs from Discord
+2026-04-18 13:38:56,407 | INFO | Collected 134 jobs from Coinbase
+2026-04-18 13:38:57,300 | INFO | Collected 146 jobs from Robinhood
+2026-04-18 13:38:57,300 | INFO | Total collected jobs: 918
+2026-04-18 13:38:58,389 | INFO | New jobs inserted: 0
+2026-04-18 13:38:58,389 | INFO | CSV exported: data/jobs_20260418_133857.csv
+2026-04-18 13:38:58,390 | INFO | Job tracker finished successfully
+2026-04-19 15:55:23,725 | INFO | Collected 58 jobs from Airtable
+2026-04-19 15:55:24,685 | INFO | Collected 82 jobs from Discord
+2026-04-19 15:55:25,507 | INFO | Collected 134 jobs from Coinbase
+2026-04-19 15:55:26,355 | INFO | Collected 146 jobs from Robinhood
+2026-04-19 15:55:27,196 | INFO | Collected 249 jobs from Brex
+2026-04-19 16:01:00,936 | INFO | Collected 58 jobs from Airtable
+2026-04-19 16:01:02,023 | INFO | Collected 82 jobs from Discord
+2026-04-19 16:01:02,961 | INFO | Collected 134 jobs from Coinbase
+2026-04-19 16:01:04,346 | INFO | Collected 146 jobs from Robinhood
+2026-04-19 16:01:05,227 | INFO | Collected 249 jobs from Brex
+2026-04-20 09:54:46,041 | INFO | Collected 58 jobs from Airtable
+2026-04-20 09:54:47,588 | INFO | Collected 82 jobs from Discord
+2026-04-20 09:55:01,726 | INFO | Collected 134 jobs from Coinbase
+2026-04-20 09:55:03,112 | INFO | Collected 146 jobs from Robinhood
+2026-04-20 09:55:05,394 | INFO | Collected 249 jobs from Brex
