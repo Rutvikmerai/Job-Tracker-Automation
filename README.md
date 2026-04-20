@@ -2,8 +2,6 @@
 
 A Python-based automation tool that collects job postings from company career pages, filters them based on relevance, and sends a daily email summary of the best matches.
 
----
-
 ## Why I Built This
 
 While searching for Data Analyst roles, I noticed:
@@ -13,8 +11,6 @@ While searching for Data Analyst roles, I noticed:
 - Manually checking multiple sites daily is inefficient
 
 So I built this system to automate the process and surface only relevant opportunities.
-
----
 
 ## What It Does
 
@@ -28,17 +24,13 @@ So I built this system to automate the process and surface only relevant opportu
 - Exports results to CSV
 - Sends a daily email summary with top matching jobs
 
----
-
-## Example Output
 
 ### Terminal Output
 
 ### Email Summary
 
-![Email Screenshot](assets/email_sample.png)
+<img width="1319" height="535" alt="Email_Screenshot" src="https://github.com/user-attachments/assets/de7962e3-e09e-4048-9264-3e8ab51df01d" />
 
----
 
 ## Tech Stack
 
