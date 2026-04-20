@@ -27,6 +27,9 @@ So I built this system to automate the process and surface only relevant opportu
 
 ### Terminal Output
 
+<img width="1188" height="290" alt="Terminal_Output" src="https://github.com/user-attachments/assets/8404c7af-a8d3-47a4-80ed-d281e1e380c4" />
+
+
 ### Email Summary
 
 <img width="1319" height="535" alt="Email_Screenshot" src="https://github.com/user-attachments/assets/de7962e3-e09e-4048-9264-3e8ab51df01d" />
