@@ -8,7 +8,7 @@ A Python-based automation tool that collects job postings from company career pa
 
 While searching for Data Analyst roles, I noticed:
 
-- Job boards like Indeed and LinkedIn are noisy and repetitive
+- Job boards like Indeed and LinkedIn are noisy and repetitive 
 - Many relevant jobs are posted directly on company career pages
 - Manually checking multiple sites daily is inefficient
 
