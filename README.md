@@ -49,12 +49,12 @@ Email Summary (SMTP)
 ## Example Output
 
 ### Terminal Output
-
-![Terminal Output](https://github.com/user-attachments/assets/8404c7af-a8d3-47a4-80ed-d281e1e380c4)
+<img width="1184" height="310" alt="output" src="https://github.com/user-attachments/assets/8e605d20-7f7f-42bc-a9e9-ba64a023b92a" />
 
 ### Email Summary
 
-![Email Screenshot](https://github.com/user-attachments/assets/de7962e3-e09e-4048-9264-3e8ab51df01d)
+<img width="1534" height="291" alt="Email output" src="https://github.com/user-attachments/assets/6bf58883-ed17-49fd-91a5-bf764f0e493f" />
+
 
 ---
 
